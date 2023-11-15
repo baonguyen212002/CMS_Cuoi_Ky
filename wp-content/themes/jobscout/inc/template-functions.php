@@ -152,31 +152,35 @@ if (!function_exists('jobscout_breadcrumbs_bar')):
 endif;
 add_action('jobscout_after_header', 'jobscout_breadcrumbs_bar', 30);
 
-if( ! function_exists( 'jobscout_content_start' ) ) :
-/**
- * Content Start
- *  
-*/
-function jobscout_content_start(){       
-    echo '<div id="acc-content" class="blog-acc"><!-- .site-header -->';
-    $home_sections = jobscout_get_home_sections(); 
-    if( ! ( is_front_page() && ! is_home() && $home_sections ) ){ //Make necessary adjust for pg template.
-        echo is_404() ? '<div class="error-holder">' : '<div id="content" class=" content-blog">'; 
+if (!function_exists('jobscout_content_start')):
+    /**
+     * Content Start
+     *  
+     */
+    function jobscout_content_start()
+    {
+        echo '<div id="acc-content"><!-- .site-header -->';
+        $home_sections = jobscout_get_home_sections();
+        if (!(is_front_page() && !is_home() && $home_sections)) { //Make necessary adjust for pg template.
+            echo is_404() ? '<div class="error-holder">' : '<div id="content" class="site-content">';
 
-        if( is_archive() || is_search() || is_page_template( 'templates/portfolio.php' ) ) : ?>
-            <header class="page-header">
-                <?php
-                    if( is_archive() ){ 
-                        if( is_author() ) { 
-                            $author_title = get_the_author(); ?>
-                            <div class="author-bio">
-                                <figure class="author-img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?></figure>
-                                <div class="author-content">
-                                    <?php 
-                                        echo '<span class="sub-title">' . esc_html__( 'All Posts by', 'jobscout' ) . '</span>';
-                                        if( $author_title ) echo '<h1 class="author-title">' . esc_html( $author_title ) . '</h3>';
-                                    ?>      
-
+            if (is_archive() || is_search() || is_page_template('templates/portfolio.php')): ?>
+                    <header class="page-header">
+                        <?php
+                        if (is_archive()) {
+                            if (is_author()) {
+                                $author_title = get_the_author(); ?>
+                                <div class="author-bio">
+                                    <figure class="author-img">
+                                        <?php echo get_avatar(get_the_author_meta('ID'), 100); ?>
+                                    </figure>
+                                    <div class="author-content">
+                                        <?php
+                                        echo '<span class="sub-title">' . esc_html__('All Posts by', 'jobscout') . '</span>';
+                                        if ($author_title)
+                                            echo '<h1 class="author-title">' . esc_html($author_title) . '</h3>';
+                                        ?>
+                                    </div>
                                 </div>
                             <?php } else {
                                 the_archive_title('<h1 class="page-title">', '</h1>');
@@ -224,35 +228,26 @@ function jobscout_content_start(){
 endif;
 add_action('jobscout_content', 'jobscout_content_start');
 
+if (!function_exists('jobscout_post_thumbnail')):
+    /**
+     * Displays an optional post thumbnail.
+     *
+     * Wraps the post thumbnail in an anchor element on index views, or a div
+     * element when on single views.
+     */
+    function jobscout_post_thumbnail()
+    {
+        $image_size = 'thumbnail';
+        $ed_featured = get_theme_mod('ed_featured_image', true);
+        $sidebar = jobscout_sidebar_layout();
 
-if ( ! function_exists( 'jobscout_post_thumbnail' ) ) :
-/**
- * Displays an optional post thumbnail.
- *
- * Wraps the post thumbnail in an anchor element on index views, or a div
- * element when on single views.
- */
-function jobscout_post_thumbnail() {
-    $image_size  = 'thumbnail';
-    $ed_featured = get_theme_mod( 'ed_featured_image', true );
-    $sidebar     = jobscout_sidebar_layout();
-    
-    if( is_home() || is_archive() || is_search() ){        
-        $image_size = 'jobscout-blog';    
-        if( has_post_thumbnail() ){                        
-            echo '<figure class="post-thumbnail index-img"><a href="' . esc_url( get_permalink() ) . '">';
-                the_post_thumbnail( $image_size, array( 'itemprop' => 'image' ) );    
-            echo '</a></figure>';
-        }else{
-            echo '<figure class="post-thumbnail">';
-                jobscout_fallback_svg_image( $image_size );  
-            echo '</figure>';  
-        }        
-    }elseif( is_singular() ){
-        $image_size = ( $sidebar ) ? 'jobscout-single' : 'jobscout-single-fullwidth';
-        if( is_single() ){
-            if( $ed_featured && has_post_thumbnail() ){
-
+        if (is_home() || is_archive() || is_search()) {
+            $image_size = 'jobscout-blog';
+            if (has_post_thumbnail()) {
+                echo '<figure class="post-thumbnail"><a href="' . esc_url(get_permalink()) . '">';
+                the_post_thumbnail($image_size, array('itemprop' => 'image'));
+                echo '</a></figure>';
+            } else {
                 echo '<figure class="post-thumbnail">';
                 jobscout_fallback_svg_image($image_size);
                 echo '</figure>';
@@ -348,55 +343,56 @@ add_action('jobscout_single_post_entry_content', 'jobscout_entry_content', 15);
 add_action('jobscout_single_post_entry_content', 'jobscout_entry_content', 15);
 add_action('jobscout_before_single_job_content', 'jobscout_entry_content', 15);
 
-if( ! function_exists( 'jobscout_entry_footer' ) ) :
-/**
- * Entry Footer
-*/
-function jobscout_entry_footer(){ 
-    $readmore = get_theme_mod( 'read_more_text', __( 'Read More', 'jobscout' ) );
-    $ed_post_date   = get_theme_mod( 'ed_post_date', false ); ?>
-	<footer class="entry-footer">
-		<?php
-			if( is_single() ){
-			    jobscout_tag();
-			}
-            
-            if( is_front_page() || is_home() || is_search() || is_archive() ){
-                
-                echo '<div class="readmore"><a href="' . esc_url( get_the_permalink() ) . '" class="readmore-link index-readmore">
-            <defs><style>.c{fill:none;stroke:#2ace5e;}</style></defs></svg>' . esc_html( $readmore ) . '</a></div>';    
-            }
+if (!function_exists('jobscout_entry_footer')):
+    /**
+     * Entry Footer
+     */
+    function jobscout_entry_footer()
+    {
+        $readmore = get_theme_mod('read_more_text', __('Read More', 'jobscout'));
+        $ed_post_date = get_theme_mod('ed_post_date', false); ?>
+                <footer class="entry-footer">
+                    <?php
+                    if (is_single()) {
+                        jobscout_tag();
+                    }
 
-            if( is_single() ) echo '<div class="entry-footer-right">';
-            if( 'post' === get_post_type() && is_single() ){
-                if( ! $ed_post_date ) jobscout_posted_on( true );
-                jobscout_comment_count();
-            }
-            
-            // if( get_edit_post_link() ){
-            //     edit_post_link(
-            //         sprintf(
-            //             wp_kses(
-            //                 /* translators: %s: Name of current post. Only visible to screen readers */
-            //                 __( 'Edit <span class="screen-reader-text">%s</span>', 'jobscout' ),
-            //                 array(
-            //                     'span' => array(
-            //                         'class' => array(),
-            //                     ),
-            //                 )
-            //             ),
-            //             get_the_title()
-            //         ),
-            //         '<span class="edit-link">',
-            //         '</span>'
-            //     );
-            // }
-            // if( is_single() ) echo '</div>';
-		?>
-	</footer><!-- .entry-footer -->
-	<?php 
-}
+                    if (is_front_page() || is_home() || is_search() || is_archive()) {
+                        echo '<a href="' . esc_url(get_the_permalink()) . '" class="readmore-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.207 8.58"><defs><style>.c{fill:none;stroke:#2ace5e;}</style></defs><g transform="translate(-701.5 -958.173)"><path class="c" d="M-9326.909-9204.917l-3.937,3.937,3.937,3.937" transform="translate(-8613.846 -8238.518) rotate(180)"/><line class="c" x2="15.154" transform="translate(701.5 962.426)"/></g></svg>' . esc_html($readmore) . '</a>';
+                    }
 
+                    if (is_single())
+                        echo '<div class="entry-footer-right">';
+                    if ('post' === get_post_type() && is_single()) {
+                        if (!$ed_post_date)
+                            jobscout_posted_on(true);
+                        jobscout_comment_count();
+                    }
+
+                    if (get_edit_post_link()) {
+                        edit_post_link(
+                            sprintf(
+                                wp_kses(
+                                    /* translators: %s: Name of current post. Only visible to screen readers */
+                                    __('Edit <span class="screen-reader-text">%s</span>', 'jobscout'),
+                                    array(
+                                        'span' => array(
+                                            'class' => array(),
+                                        ),
+                                    )
+                                ),
+                                get_the_title()
+                            ),
+                            '<span class="edit-link">',
+                            '</span>'
+                        );
+                    }
+                    if (is_single())
+                        echo '</div>';
+                    ?>
+                </footer><!-- .entry-footer -->
+                <?php
+    }
 endif;
 add_action('jobscout_post_entry_content', 'jobscout_entry_footer', 20);
 add_action('jobscout_page_entry_content', 'jobscout_entry_footer', 20);
