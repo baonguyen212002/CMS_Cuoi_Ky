@@ -14,6 +14,7 @@
      * @hooked jobscout_doctype
     */
     do_action( 'jobscout_doctype' );
+    
 ?>
 <head itemscope itemtype="https://schema.org/WebSite">
 	<?php 
@@ -25,6 +26,8 @@
     do_action( 'jobscout_before_wp_head' );
     
     wp_head(); ?>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">

@@ -88,7 +88,7 @@ class RaraTheme_Featured_Page_Widget extends WP_Widget {
                         <?php
                         if( isset( $title ) && $title!='' )
                         { ?>
-                            <h2 class="widget-title"><?php echo esc_html( $title ); ?></h2>
+                            <h2 class="widget-title "><?php echo esc_html( $title ); ?></h2>
                         <?php } ?>
                         <div class="featured_page_content">
                             <?php 
