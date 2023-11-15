@@ -35,7 +35,7 @@ function jobscout_posted_on( $single = false ) {
     
     $posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $time_svg .'<time class="updated published">' . $time_string . '</time></a>';
 	
-	echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+	// echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 }
 endif;
@@ -47,7 +47,7 @@ if ( ! function_exists( 'jobscout_posted_by' ) ) :
 function jobscout_posted_by() {
 	$byline = sprintf( '<span itemprop="name"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" itemprop="url">' . esc_html( get_the_author() ) . '</a></span>' 
     );
-	echo '<span class="byline" itemprop="author" itemscope itemtype="https://schema.org/Person">' . $byline . '</span>';
+	// echo '<span class="byline" itemprop="author" itemscope itemtype="https://schema.org/Person">' . $byline . '</span>';
 }
 endif;
 
