@@ -13,7 +13,7 @@ if( $ed_testimonial && ( $section_title || $section_desc ||  is_active_sidebar( 
 		<?php if( $section_title || $section_desc ){ ?>
 			<div class="container">
 				<?php 
-					if( $section_title ) echo '<h2 class="section-title">'. esc_html( $section_title ) .'</h2>';
+					if( $section_title ) echo '<h2 class="section-title  ">'. esc_html( $section_title ) .'</h2>';
 					if( $section_desc ) echo '<div class="section-desc">'. wpautop( wp_kses_post( $section_desc ) ) .'</div>';
 				?>
 			</div>
