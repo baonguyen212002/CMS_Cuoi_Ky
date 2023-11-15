@@ -2622,7 +2622,7 @@ section.top-job-section .section-title {
 }
 
 .top-job-section .row div.job_listings article .entry-meta {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
   margin-top: 15px;
   padding-top: 15px;
   font-size: 1em;
@@ -2666,17 +2666,18 @@ section.top-job-section .section-title {
 .job-types li.job-type,
 .job_listing li.job-type {
   list-style: none;
-  font-size: 0.7778em;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
   display: inline-block;
-  border: 1px solid #2ace5e;
-  border-radius: 40px;
+  /* border: 1px solid #e7e0e0;; */
+  /* border-radius: 40px; */
   padding: 5px 20px;
-  color: #2ace5e;
+  color: #505050;
   margin-top: 10px;
   cursor: default;
+  
 }
 
 .job-manager li.freelance,
@@ -8159,6 +8160,7 @@ RESPONSIVE STYLESHEET
 .wp-block-social-links {
   flex-wrap: wrap !important;
 }
+
 /* css blog */
 .readmore>a{
   color: #f4ae7c !important;
@@ -8174,4 +8176,35 @@ RESPONSIVE STYLESHEET
 }
 .blog-format .post{
   background-color: #ffffff;
+
+/* ---module 2--- */
+.created-post{
+  color: #c7c7c7;
+}
+
+.job-posting{
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+}
+
+li.category-name::before{
+  content: "";
+  position: relative;
+  right: 18px;
+  border-left: 1px solid #000;
+}
+li.category-name::after{
+  content: "";
+  position: relative;
+  left: 18px;
+  border-left: 1px solid #000;
+}
+.salary-amt > li {
+  list-style-type: disc;
+}
+
+.job-desc .job-title-wrap{
+  padding-left: 0 !important;
+
 }
