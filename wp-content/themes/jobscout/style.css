@@ -8159,3 +8159,103 @@ RESPONSIVE STYLESHEET
 .wp-block-social-links {
   flex-wrap: wrap !important;
 }
+
+/* Module 1: Search */
+.module_body {
+position: relative;
+width: 100%;
+height: 400px;
+}
+
+.module_banner_title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: left;
+  opacity: 0.6;
+  font-size: 32px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.module_banner_des {
+  position: absolute; 
+  top: 20%;
+  left: 0;
+  text-align: left;
+  opacity: 0.6;
+}
+.module_banner_searchform {
+  position: absolute; 
+  top: 40%;
+  left: 0;
+}
+
+.module_search_background {
+  position: relative;
+  width: 1120px;
+  height: 120px;
+  left: calc(50% - 560px);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 !important;
+}
+
+.module_search {
+  position: absolute;
+  display: flex;
+  width: 1120px;
+  height: 60px;
+  left: calc(50% - 560px);
+  top: calc(50% - 30px);
+
+}
+
+.module_search_form {
+  position: relative;
+  padding: 0 30px;
+}
+.input_search {
+  width: 500px !important;
+  padding-left: 60px !important;
+}
+.icon_search {
+  position: absolute;
+  color: orange;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  left: 40px;
+}
+
+.module_location_form {
+  position: relative;
+  padding-right: 30px;
+}
+.select_locations {
+  width: 300px !important;
+  padding: 10px 60px !important;
+}
+.icon_location {
+  position: absolute;
+  color: orange;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  left: 10px;
+}
+
+.btn_submit {
+  width: 200px !important;
+  color: white !important;
+  background-color: orange !important;
+  text-indent: 0 !important;
+  text-align: center !important;
+  background-image: none !important;
+}
+
+/* /Module 1: Search */
+
+/* Module: Footer */
+.footer_A {
+  background-color: orange ;
+}
+
+/* /Module: Footer */
