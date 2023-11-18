@@ -13,13 +13,13 @@ $find_a_job_link   = get_option( 'job_manager_jobs_page_id', 0 );
 if( $ed_banner && has_custom_header() ){ ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600&display=swap" rel="stylesheet">
 
 
     <div id="banner-section" class="site-banner<?php if( has_header_video() ) echo esc_attr( ' video-banner' ); ?>">
         <div class="item">
             <?php the_custom_header_markup(); ?>
-            <div class="banner-caption ">
+            <div class="banner-caption">
                 <div class="container module_body">
                     <div class="caption-inner ">
                         <?php 

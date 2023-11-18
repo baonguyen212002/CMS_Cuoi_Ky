@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- :root {
+:root {
   --primary-color: #2ace5e;
   --primary-color-rgb: 42, 206, 94;
   --primary-color-dark: #36b25ded;
@@ -8162,31 +8162,34 @@ RESPONSIVE STYLESHEET
 
 /* Module 1: Search */
 .module_body {
-position: relative;
-width: 100%;
-height: 400px;
+  position: relative;
+  width: 100%;
+  height: 400px;
 }
 
 .module_banner_title {
   position: absolute;
-  left: 0;
+  left: 100px;
   top: 0;
   text-align: left;
   opacity: 0.6;
   font-size: 32px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
 }
+
 .module_banner_des {
-  position: absolute; 
-  top: 20%;
-  left: 0;
+  position: absolute;
+  top: 30%;
+  left: 100px;
   text-align: left;
   opacity: 0.6;
 }
+
 .module_banner_searchform {
-  position: absolute; 
+  position: absolute;
+  width: 1120px;
   top: 40%;
-  left: 0;
+  left: calc(50% - 560px);
 }
 
 .module_search_background {
@@ -8212,13 +8215,15 @@ height: 400px;
   position: relative;
   padding: 0 30px;
 }
+
 .input_search {
   width: 500px !important;
   padding-left: 60px !important;
 }
+
 .icon_search {
   position: absolute;
-  color: orange;
+  color: #E67223;
   width: 30px;
   height: 30px;
   top: calc(50% - 15px);
@@ -8229,13 +8234,15 @@ height: 400px;
   position: relative;
   padding-right: 30px;
 }
+
 .select_locations {
   width: 300px !important;
   padding: 10px 60px !important;
 }
+
 .icon_location {
   position: absolute;
-  color: orange;
+  color: #E67223;
   width: 30px;
   height: 30px;
   top: calc(50% - 15px);
@@ -8245,7 +8252,7 @@ height: 400px;
 .btn_submit {
   width: 200px !important;
   color: white !important;
-  background-color: orange !important;
+  background-color: #E67223 !important;
   text-indent: 0 !important;
   text-align: center !important;
   background-image: none !important;
@@ -8254,8 +8261,63 @@ height: 400px;
 /* /Module 1: Search */
 
 /* Module: Footer */
+
+/* Footer A */
 .footer_A {
-  background-color: orange ;
+  background-color: #E67223;
+  height: 200px;
+  padding-top: 0 !important;
 }
 
+.p_search_footer {
+  padding-top: 50px;
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  height: 100px;
+}
+
+.search_submit_footer {
+  position: relative;
+  padding-top: 75px;
+  width: 600px;
+  height: 50px;
+}
+.icon_mail_footer {
+  position: absolute;
+  padding-top: 70px;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  left: 20px;
+  color: #E67223;
+}
+.input_search_footer {
+  height: 60px !important;
+  top: calc(50% - 30px);
+  border-radius: 0 !important;
+  padding-left: 60px !important;
+}
+
+.submit_footer {
+  padding-top: 75px;
+}
+.btn_submit_footer {
+  width: 200px !important;
+  height: 60px;
+  top: calc(50% - 30px);
+  font-size: 24px !important;
+  border-radius: 0 !important;
+  background: #E67223 !important;
+  border: 2px solid white !important;
+}
+/* /Footer A */
+
+/* Footer B */
+.footer_B {
+  height: 400px;
+  text-align: center;
+}
+
+/* /Footer B */
 /* /Module: Footer */

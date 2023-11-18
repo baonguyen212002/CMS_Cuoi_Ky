@@ -547,10 +547,14 @@ if (!function_exists('jobscout_footer_start')):
 endif;
 add_action('jobscout_footer', 'jobscout_footer_start', 20);
 
+
+// Module: Footer
 if (!function_exists('jobscout_footer_top')):
     /**
      * Footer Top
      */
+
+    // Footer_A
     function jobscout_footer_top()
     {
         $footer_sidebars = array('footer-one', 'footer-two', 'footer-three', 'footer-four');
@@ -564,22 +568,48 @@ if (!function_exists('jobscout_footer_top')):
             }
         }
 
+        // Search Form
+        $find_a_job_link = get_option('job_manager_jobs_page_id', 0);
+        $post_slug = get_post_field('post_name', $find_a_job_link);
+
+        if ($post_slug) {
+            $action_page = home_url('/' . $post_slug);
+        } else {
+            $action_page = home_url('/');
+        }
+
         if ($active_sidebars) { ?>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <form class="jobscout_job_filters" method="GET" action="<?php echo esc_url($action_page) ?>">
                     <div class="footer-t footer_A">
                         <div class="container">
-                            <div class="grid column-<?php echo esc_attr($sidebar_count); ?>">
-                                <?php foreach ($active_sidebars as $active) { ?>
-                                    <div class="col-3">
-                                        <!-- <?php dynamic_sidebar($active); ?> -->
+                            <div class="row">
+                                <div class="col-3 p_search_footer">
+                                    <p class="">Subscribe To <br /> Our Newsletter </p>
+                                </div>
 
+                                <div class="col-6">
+                                    <div class="search_submit_footer">
+                                        <div class="search_keywords">
+                                            <i class="fa fa-envelope icon_mail_footer"></i>
+                                            <input class="input_search_footer" type="text" id="search_keywords"
+                                                name="search_keywords"
+                                                placeholder="<?php esc_attr_e('Input your email address', 'jobscout'); ?>">
+                                        </div>
                                     </div>
-                                    <div class="col-9">
-                                    
+                                </div>
+
+                                <div class="col-3 submit_footer">
+                                    <div class="search_submit">
+                                        <input type="submit" class="btn_submit_footer"
+                                            value="<?php esc_attr_e('SUBSCRIBE', 'jobscout'); ?>" />
                                     </div>
-                                <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </form>
                 <?php
         }
     }
@@ -590,8 +620,38 @@ if (!function_exists('jobscout_footer_bottom')):
     /**
      * Footer Bottom
      */
+
+
+    // Footer_B
     function jobscout_footer_bottom()
     { ?>
+            <div class="footer_B">
+                <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"
+                        itemprop="url">
+                        <?php bloginfo('name'); ?>
+                    </a></h1>
+
+                <nav id="site-navigation" class="main-navigation" role="navigation" itemscope
+                    itemtype="https://schema.org/SiteNavigationElement">
+                    <!-- <button class="toggle-btn" data-toggle-target=".main-menu-modal"
+                        data-toggle-body-class="showing-main-menu-modal" aria-expanded="false"
+                        data-set-focus=".close-main-nav-toggle">
+                    </button> -->
+
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'primary',
+                            'menu_id' => 'primary-menu',
+                            'menu_class' => 'nav-menu',
+                            'container' => false,
+                            'fallback_cb' => 'jobscout_primary_menu_fallback',
+                        ));
+                    ?>
+                </nav><!-- #site-navigation -->
+            </div>
+
+
             <div class="footer-b">
                 <div class="container">
                     <?php
@@ -610,6 +670,7 @@ if (!function_exists('jobscout_footer_bottom')):
             <?php
     }
 endif;
+// /Module: Footer
 add_action('jobscout_footer', 'jobscout_footer_bottom', 40);
 
 if (!function_exists('jobscout_footer_end')):
