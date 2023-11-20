@@ -140,11 +140,13 @@ if( ! function_exists( 'jobscout_content_start' ) ) :
  * Content Start
  *  
 */
+
+// Module: banner
 function jobscout_content_start(){       
     echo '<div id="acc-content" class="blog-acc"><!-- .site-header -->';
     $home_sections = jobscout_get_home_sections(); 
     if( ! ( is_front_page() && ! is_home() && $home_sections ) ){ //Make necessary adjust for pg template.
-        echo is_404() ? '<div class="error-holder">' : '<div id="content" class=" content-blog">'; 
+        echo is_404(); 
 
         if( is_archive() || is_search() || is_page_template( 'templates/portfolio.php' ) ) : ?>
             <header class="page-header">

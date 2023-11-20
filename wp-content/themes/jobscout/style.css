@@ -2597,7 +2597,7 @@ section.top-job-section .section-title {
 }
 
 .top-job-section .row div.job_listings article .job-title-wrap {
-  width: calc(100% - 100px);
+  /* width: calc(100% - 100px); */
   padding-left: 20px;
 }
 
@@ -5555,17 +5555,17 @@ PAGE TEMPLATE LOGIN REGISTER
 JOB LISTING PAGE
 ==========================*/
 .site-main .entry-content div.job_listings div.job_listings article {
+  width: 48%;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-  margin-bottom: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 10px;
   border-radius: 5px;
   padding: 30px;
   position: relative;
   display: flex;
-  flex: 1;
   flex-wrap: wrap;
-  overflow: hidden;
   align-items: flex-start;
+  overflow: hidden;
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .company-logo {
@@ -5575,7 +5575,7 @@ JOB LISTING PAGE
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .job-title-wrap {
-  width: calc(100% - 100px);
+  /* width: calc(100% - 100px); */
   padding-left: 20px;
 }
 
@@ -5615,7 +5615,7 @@ JOB LISTING PAGE
   line-height: 1.44em;
   font-weight: 400;
   margin-bottom: 5px;
-  margin-right: 40px;
+  /* margin-right: 40px; */
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .entry-meta .salary-amt .currency {
@@ -8207,4 +8207,9 @@ li.category-name::after{
 .job-desc .job-title-wrap{
   padding-left: 0 !important;
 
+}
+/* Moddule 4 */
+.jobs-4{
+  display: flex;
+  flex-wrap: wrap;
 }
