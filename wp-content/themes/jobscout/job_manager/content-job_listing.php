@@ -42,7 +42,7 @@ $company_name = get_post_meta( get_the_ID(), '_company_name', true );
 						$types = wpjm_get_the_job_types(); 
 						if ( ! empty( $types ) ) : foreach ( $types as $jobtype ) : ?>
 							<li class="job-type <?php echo esc_attr( sanitize_title( $jobtype->slug ) ); ?>"><?php echo esc_html( $jobtype->name ); ?></li>
-							<li class="job-type category-name">Category name</li>
+							<div class="border-line"><li class="job-type category-name">Category name</li></div>
 							<li class="job-type <?php echo esc_attr( sanitize_title( $location = get_the_job_location( $post ) ) ); ?>"><?php echo esc_html( $location = get_the_job_location( $post ) ); ?></li>
 						<?php endforeach; endif; 
 					}
@@ -76,7 +76,7 @@ $company_name = get_post_meta( get_the_ID(), '_company_name', true );
 					</div>
 				</div>		
 			</div>
-		</div>	
+	</div>	
 
 	<?php if( $job_featured ){ ?>
 		<div class="featured-label"><?php esc_html_e( 'Featured', 'jobscout' ); ?></div>
