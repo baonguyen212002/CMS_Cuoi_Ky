@@ -1854,11 +1854,11 @@ SIDEBARS
   margin-bottom: 50px;
 }
 
-.rightsidebar #primary {
+/* .rightsidebar #primary {
   float: left;
-  /* width: 75%; */
+  width: 75%;
   padding-right: 40px;
-}
+} */
 
 .leftsidebar #primary {
   float: right;
@@ -8349,6 +8349,15 @@ RESPONSIVE STYLESHEET
   text-decoration: none;
 }
 /* news */
+.index_main {
+  max-width: 1500px !important;
+}
+.index_title {
+  font-weight: 700 !important;
+  text-align: center;
+  margin: 30px 0;
+  text-transform: uppercase;
+  }
 .readmore-new .readmore-link{
   font-weight: bold;
   color: orange;
@@ -8362,8 +8371,17 @@ h2.section-title.index-title {
 .entry-title a{
   text-decoration: none !important;
 }
+.blog-format {
+  width: 600px !important;
+  height: 350px !important;
+  padding: 0 20px !important;
+}
 .blog-format figure.post-thumbnail {
   padding: 20px 0 20px 20px;
+}
+.blog-format .content-wrap {
+  width: 300px !important;
+    height: 300px !important;
 }
 
 /* banner 2-home */
@@ -8385,3 +8403,4 @@ h2.section-title.index-title {
 .centered.bttk-cta-bg {
   padding: 60px 0px;
 }
+/* css banner contact */

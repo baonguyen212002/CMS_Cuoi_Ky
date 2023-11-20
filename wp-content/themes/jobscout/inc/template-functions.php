@@ -239,8 +239,12 @@ if (!function_exists('jobscout_post_thumbnail')):
     {
         $image_size = 'thumbnail';
         $ed_featured = get_theme_mod('ed_featured_image', true);
-        $sidebar = jobscout_sidebar_layout();
 
+        // Demo delete sidebar
+        // $sidebar = jobscout_sidebar_layout();
+        $sidebar ='';
+        //
+        
         if (is_home() || is_archive() || is_search()) {
             $image_size = 'jobscout-blog';
             if (has_post_thumbnail()) {
@@ -278,7 +282,7 @@ if (!function_exists('jobscout_entry_header')):
      */
     function jobscout_entry_header()
     { ?>
-                <header class="entry-header">
+                <header class="entry-header ">
                     <?php
                     $ed_cat_single = get_theme_mod('ed_category', false);
                     $hide_author = get_theme_mod('ed_post_author', false);
@@ -369,24 +373,24 @@ if (!function_exists('jobscout_entry_footer')):
                         jobscout_comment_count();
                     }
 
-                    if (get_edit_post_link()) {
-                        edit_post_link(
-                            sprintf(
-                                wp_kses(
-                                    /* translators: %s: Name of current post. Only visible to screen readers */
-                                    __('Edit <span class="screen-reader-text">%s</span>', 'jobscout'),
-                                    array(
-                                        'span' => array(
-                                            'class' => array(),
-                                        ),
-                                    )
-                                ),
-                                get_the_title()
-                            ),
-                            '<span class="edit-link">',
-                            '</span>'
-                        );
-                    }
+                    // if (get_edit_post_link()) {
+                    //     edit_post_link(
+                    //         sprintf(
+                    //             wp_kses(
+                    //                 /* translators: %s: Name of current post. Only visible to screen readers */
+                    //                 __('Edit <span class="screen-reader-text">%s</span>', 'jobscout'),
+                    //                 array(
+                    //                     'span' => array(
+                    //                         'class' => array(),
+                    //                     ),
+                    //                 )
+                    //             ),
+                    //             get_the_title()
+                    //         ),
+                    //         '<span class="edit-link">',
+                    //         '</span>'
+                    //     );
+                    // }
                     if (is_single())
                         echo '</div>';
                     ?>
@@ -406,7 +410,7 @@ if (!function_exists('jobscout_get_single_job_title')):
     {
         ?>
                 <header class="entry-header">
-                    <h1 class="entry-title">
+                    <h1 class="entry-title ">
                         <?php the_title(); ?>
                     </h1>
                     <?php
