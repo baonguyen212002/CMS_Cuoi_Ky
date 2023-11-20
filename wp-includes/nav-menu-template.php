@@ -693,4 +693,6 @@ function wp_nav_menu_remove_menu_item_has_children_class( $classes, $menu_item, 
 	}
 
 	return $classes;
+
 }
+
