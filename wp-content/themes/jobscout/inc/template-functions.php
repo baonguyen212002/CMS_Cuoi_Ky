@@ -162,7 +162,7 @@ if (!function_exists('jobscout_content_start')):
         echo '<div id="acc-content"><!-- .site-header -->';
         $home_sections = jobscout_get_home_sections();
         if (!(is_front_page() && !is_home() && $home_sections)) { //Make necessary adjust for pg template.
-            echo is_404() ? '<div class="error-holder">' : '<div id="content" class="site-content">';
+            echo is_404() ? '<div class="error-holder">' : '<div id="content" class="site-content news-content">';
 
             if (is_archive() || is_search() || is_page_template('templates/portfolio.php')): ?>
                     <header class="page-header">
@@ -358,7 +358,7 @@ if (!function_exists('jobscout_entry_footer')):
                     }
 
                     if (is_front_page() || is_home() || is_search() || is_archive()) {
-                        echo '<a href="' . esc_url(get_the_permalink()) . '" class="readmore-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.207 8.58"><defs><style>.c{fill:none;stroke:#2ace5e;}</style></defs><g transform="translate(-701.5 -958.173)"><path class="c" d="M-9326.909-9204.917l-3.937,3.937,3.937,3.937" transform="translate(-8613.846 -8238.518) rotate(180)"/><line class="c" x2="15.154" transform="translate(701.5 962.426)"/></g></svg>' . esc_html($readmore) . '</a>';
+                        echo '<div class="readmore-new"><a href="' . esc_url(get_the_permalink()) . '" class="readmore-link">' . esc_html($readmore) . '</a>';
                     }
 
                     if (is_single())
