@@ -125,7 +125,7 @@ function jobscout_site_branding( $responsive = false ){
         $branding_class = '';
     }
     ?>
-    <div class="site-branding<?php echo esc_attr( $branding_class ); ?>" itemscope itemtype="https://schema.org/Organization"> <!-- logo-text -->
+    <div class="left-header site-branding<?php echo esc_attr( $branding_class ); ?>" itemscope itemtype="https://schema.org/Organization"> <!-- logo-text -->
         <?php 
             if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
                 echo '<div class="site-logo">';
@@ -168,7 +168,7 @@ function jobscout_primary_nagivation(){
     $post_job_label  = get_theme_mod( 'post_job_label', __( 'Post Jobs', 'jobscout' ) );
     $post_job_url    = get_theme_mod( 'post_job_url', '#' );
     ?>
-    	<nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    	<nav id="site-navigation" class="box-header main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <button class="toggle-btn" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".close-main-nav-toggle">
             <span class="toggle-bar"></span>
             <span class="toggle-bar"></span>
@@ -212,7 +212,7 @@ if( ! function_exists( 'jobscout_secondary_navigation' ) ) :
  * Secondary Navigation
 */
 function jobscout_secondary_navigation(){ ?>
-    <div class="header-t">
+    <div class="header-t"hidden>
         <div class="container">
             <div class="left-block">
 	            <nav class="secondary-nav">
