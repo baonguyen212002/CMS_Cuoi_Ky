@@ -579,37 +579,6 @@ if (!function_exists('jobscout_footer_top')):
         }
 
         if ($active_sidebars) { ?>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-                <form class="jobscout_job_filters" method="GET" action="<?php echo esc_url($action_page) ?>">
-                    <div class="footer-t footer_A">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-3 p_search_footer">
-                                    <p class="">Subscribe To <br /> Our Newsletter </p>
-                                </div>
-
-                                <div class="col-6">
-                                    <div class="search_submit_footer">
-                                        <div class="search_keywords">
-                                            <i class="fa fa-envelope icon_mail_footer"></i>
-                                            <input class="input_search_footer" type="text" id="search_keywords"
-                                                name="search_keywords"
-                                                placeholder="<?php esc_attr_e('Input your email address', 'jobscout'); ?>">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 submit_footer">
-                                    <div class="search_submit">
-                                        <input type="submit" class="btn_submit_footer"
-                                            value="<?php esc_attr_e('SUBSCRIBE', 'jobscout'); ?>" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
                 <?php
         }
     }

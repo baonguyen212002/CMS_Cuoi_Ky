@@ -641,6 +641,7 @@ class WPCF7_ContactForm {
 
 		$atts += (array) apply_filters( 'wpcf7_form_additional_atts', array() );
 
+		// note1
 		$html .= sprintf( '<form %s>', wpcf7_format_atts( $atts ) ) . "\n";
 		$html .= $this->form_hidden_fields();
 		$html .= $this->form_elements();
@@ -722,7 +723,7 @@ class WPCF7_ContactForm {
 
 		foreach ( $hidden_fields as $name => $value ) {
 			$content .= sprintf(
-				'<input type="hidden" name="%1$s" value="%2$s" />',
+				'<input type="hidden" name="%1$s" value="%2$s"/>',
 				esc_attr( $name ),
 				esc_attr( $value )
 			) . "\n";
