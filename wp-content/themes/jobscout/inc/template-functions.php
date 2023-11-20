@@ -629,34 +629,52 @@ if (!function_exists('jobscout_footer_bottom')):
     // Footer_B
     function jobscout_footer_bottom()
     { ?>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+
+
             <div class="footer_B">
-                <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"
-                        itemprop="url">
+                <div class="footer_B_title">
+                    <h1 class="h1_footer_B">
                         <?php bloginfo('name'); ?>
-                    </a></h1>
+                    </h1>
+                </div>
 
-                <nav id="site-navigation" class="main-navigation" role="navigation" itemscope
-                    itemtype="https://schema.org/SiteNavigationElement">
-                    <!-- <button class="toggle-btn" data-toggle-target=".main-menu-modal"
-                        data-toggle-body-class="showing-main-menu-modal" aria-expanded="false"
-                        data-set-focus=".close-main-nav-toggle">
-                    </button> -->
+                <div class="menu_footer_B">
 
-                    <?php
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'primary',
-                            'menu_id' => 'primary-menu',
-                            'menu_class' => 'nav-menu',
-                            'container' => false,
-                            'fallback_cb' => 'jobscout_primary_menu_fallback',
-                        ));
-                    ?>
-                </nav><!-- #site-navigation -->
+                    <nav class="main-navigation">
+                        <?php
+                        $defaults = array(
+                            'items_wrap'=> '<ul class="nav_menu_footer_B">%3$s</ul>',
+                        );
+
+                        wp_nav_menu( $defaults);
+                        ?>
+                    </nav>
+                    <!-- #site-navigation -->
+                </div>
+
+                <div class="list_logo">
+                    <div class="branch">
+                        <div class="facebook"></div>
+                    </div>
+                    <div class="branch">
+                        <div class="google"></div>
+                    </div>
+                    <div class="branch">
+                        <div class="line"></div>
+                    </div>
+                    <div class="branch">
+                        <div class="twitter"></div>
+                    </div>
+                </div>
+
             </div>
 
 
-            <div class="footer-b">
+
+            <div class=" footer-b">
                 <div class="container">
                     <?php
                     if (function_exists('the_privacy_policy_link'))

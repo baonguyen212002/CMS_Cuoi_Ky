@@ -3188,7 +3188,7 @@ LIST VIEW
 .list-view .site-main article {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
   /*overflow: hidden;*/
-  /* border-radius: 5px; */
+  border-radius: 5px;
   margin-bottom: 40px;
   display: flex;
   flex: 1;
@@ -4714,7 +4714,7 @@ WIDGET CALL TO ACTION
   font-weight: 700;
   margin: 5px;
   font-size: 0.888em;
-  /* border-radius: 5px; */
+  border-radius: 5px;
   padding: 10px 18px;
 }
 
@@ -8348,43 +8348,8 @@ RESPONSIVE STYLESHEET
   color: orange;
   text-decoration: none;
 }
-/* news */
-.index_main {
-  max-width: 1500px !important;
-}
-.index_title {
-  font-weight: 700 !important;
-  text-align: center;
-  margin: 30px 0;
-  text-transform: uppercase;
-  }
-.readmore-new .readmore-link{
-  font-weight: bold;
-  color: orange;
-  text-decoration: none;
-}
-h2.section-title.index-title {
-  text-align: center;
-  margin-bottom: 31px;
-  font-weight: 640 !important;
-}
-.entry-title a{
-  text-decoration: none !important;
-}
-.blog-format {
-  width: 600px !important;
-  height: 350px !important;
-  padding: 0 20px !important;
-}
-.blog-format figure.post-thumbnail {
-  padding: 20px 0 20px 20px;
-}
-.blog-format .content-wrap {
-  width: 300px !important;
-    height: 300px !important;
-}
-
 /* banner 2-home */
+
 .button-wrap .btn-1{
   background-color: transparent !important;
   border: 1px solid #fff !important;
@@ -8393,14 +8358,58 @@ h2.section-title.index-title {
 }
 .raratheme-cta-container .widget-title{
   font-weight: 500 !important;
- padding-bottom: 20px;
+  padding-bottom: 20px;
 }
-
-
 .raratheme-cta-container{
   max-width: 700px !important;
 }
-.centered.bttk-cta-bg {
+.centered .bttk-cta-bg {
   padding: 60px 0px;
 }
-/* css banner contact */
+
+/* new */
+.index_main{
+  max-width: 1500px !important;
+}
+.index_title {
+  font-weight: 700 !important;
+ text-align: center;
+ margin: 30px 0;
+ text-transform: uppercase;
+   }
+   .readmore-new .readmore-link{
+    font-weight: bold;
+   color: orange;
+     text-decoration: none;
+  }
+  h2.section-title .index-title {
+    text-align: center;
+   margin-bottom: 31px;
+   font-weight: 640 !important;
+
+} 
+.blog-format figure.post-thumbnail {
+  padding: 20px 0 20px 20px;
+}
+
+.blog-format {
+  width: 600px !important;
+  height: 350px !important;
+  padding: 20px !important;
+}
+
+.entry-title a {
+  text-decoration: none !important;
+}
+.section-title .index-title {
+  text-align: center;
+  margin-bottom: 31px;
+  font-weight: 640 !important;
+}
+.blog-format .content-wrap{
+  width: 300px !important;
+    height: 300px !important;
+}
+
+
+

@@ -31,7 +31,7 @@ $company_name = get_post_meta( get_the_ID(), '_company_name', true );
 			</figure>
 		</div>
 		<div class="col-9">
-		<h2 class="entry-title">
+			<h2 class="entry-title">
 				<a href="<?php the_job_permalink(); ?>"><?php wpjm_the_job_title(); ?></a>
 			</h2>
 			
@@ -42,46 +42,41 @@ $company_name = get_post_meta( get_the_ID(), '_company_name', true );
 						$types = wpjm_get_the_job_types(); 
 						if ( ! empty( $types ) ) : foreach ( $types as $jobtype ) : ?>
 							<li class="job-type <?php echo esc_attr( sanitize_title( $jobtype->slug ) ); ?>"><?php echo esc_html( $jobtype->name ); ?></li>
-							<li class="job-type category-name">Category name</li>
+							<div class="border-line"><li class="job-type category-name">Category name</li></div>
 							<li class="job-type <?php echo esc_attr( sanitize_title( $location = get_the_job_location( $post ) ) ); ?>"><?php echo esc_html( $location = get_the_job_location( $post ) ); ?></li>
 						<?php endforeach; endif; 
 					}
 					do_action( 'job_listing_meta_end' ); 
 				?>
-				</div>
-		</div>
-		<div class="row">
-		<div class="col">
-			<div class="job-desc">
-				<div class="job-title-wrap">
-					
-					
-					<div class="entry-meta">
-						<?php 
-							do_action( 'job_listing_meta_start' ); 
-
-							if( $job_salary ){
-								echo '<div class="salary-amt">
-									<li><span class="salary">'. esc_html( $job_salary ) .'</span></li>
-								</div>';
-							}
-						?>
-						<!-- <div class="company-address">
-							<i class="fas fa-map-marker-alt"></i>
-							<?php the_job_location( true ); ?>
-						</div> -->
-						
-						
-					</div>		
 			</div>
-			</div>
-			
 		</div>
-		</div>
-		
 		
 	</div>
-	
+	<div class="row">
+			<div class="col">
+				<div class="job-desc">
+					<div class="job-title-wrap">
+						<div class="entry-meta">
+							<?php 
+								do_action( 'job_listing_meta_start' ); 
+
+								if( $job_salary ){
+									echo '<div class="salary-amt">
+										<li><span class="salary">'. esc_html( $job_salary ) .'</span></li>
+									</div>';
+								}
+							?>
+							<!-- <div class="company-address">
+								<i class="fas fa-map-marker-alt"></i>
+								<?php the_job_location( true ); ?>
+							</div> -->
+							
+							
+						</div>		
+					</div>
+				</div>		
+			</div>
+	</div>	
 
 	<?php if( $job_featured ){ ?>
 		<div class="featured-label"><?php esc_html_e( 'Featured', 'jobscout' ); ?></div>

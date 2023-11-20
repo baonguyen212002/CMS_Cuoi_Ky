@@ -30,6 +30,8 @@
 	  */
 	  do_action( 'jobscout_before_posts_content' );
 	  ?>
+	
+  	</div>
 	 
 	 <!--nội dung chính của trang web được bao bọc trong phần tử <main>  -->
 	  <main id="main" class="site-main index-main index_main">
