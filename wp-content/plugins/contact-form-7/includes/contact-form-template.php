@@ -24,7 +24,7 @@ class WPCF7_ContactFormTemplate {
 <label> %2$s
     [text* your-name autocomplete:name] </label>
 
-<label> %3$s
+<label> %3$s 
     [email* your-email autocomplete:email] </label>
 
 <label> %4$s

@@ -251,8 +251,8 @@ class rtc_Contact_Social_Links extends WP_Widget {
             </p>
 
             <p>
-                <label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e( 'Email', 'raratheme-companion' ); ?></label> 
-                <input class="widefat rtc-contact-social-email-test" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" type="email" value="<?php echo esc_attr( $email ); ?>" />
+                <label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e( 'Email', 'raratheme-companion' ); ?></label>
+                <input class="widefat rtc-contact-social-email-test" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" type="email" value="<?php echo esc_attr( $email ); ?>"/>
             </p>
 
             <p>
