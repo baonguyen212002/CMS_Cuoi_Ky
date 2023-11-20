@@ -30,6 +30,10 @@
 	  */
 	  do_action( 'jobscout_before_posts_content' );
 	  ?>
+	<div class="image-container">
+    <img src="../wp-content/themes/jobscout/images/news.jpg" alt=""class="image-style">
+    <div class="text-overlay">FDS NEWS</div>
+  	</div>
 	 
 	 <!--nội dung chính của trang web được bao bọc trong phần tử <main>  -->
 	  <main id="main" class="site-main index-main">
