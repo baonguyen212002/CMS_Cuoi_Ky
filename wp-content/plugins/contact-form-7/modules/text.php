@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <?php
 /**
 ** A base module for the following types of tags:
@@ -31,7 +33,7 @@ function wpcf7_text_form_tag_handler( $tag ) {
 	$class = wpcf7_form_controls_class( $tag->type, 'wpcf7-text' );
 
 	if ( in_array( $tag->basetype, array( 'email', 'url', 'tel' ) ) ) {
-		$class .= ' wpcf7-validates-as-' . $tag->basetype;
+		$class .= ' input_submit_email_binh wpcf7-validates-as-' . $tag->basetype;
 	}
 
 	if ( $validation_error ) {
@@ -88,7 +90,7 @@ function wpcf7_text_form_tag_handler( $tag ) {
 	$atts['name'] = $tag->name;
 
 	$html = sprintf(
-		'<span class="wpcf7-form-control-wrap" data-name="%1$s"><input %2$s />%3$s</span>',
+		'<span class="wpcf7-form-control-wrap" data-name="%1$s"><input %2$s placeholder="Input your email address"/>%3$s</span>',
 		esc_attr( $tag->name ),
 		wpcf7_format_atts( $atts ),
 		$validation_error
@@ -311,7 +313,6 @@ function wpcf7_tag_generator_text( $contact_form, $args = '' ) {
 
 <div class="insert-box">
 	<input type="text" name="<?php echo $type; ?>" class="tag code" readonly="readonly" onfocus="this.select()" />
-
 	<div class="submitbox">
 	<input type="button" class="button button-primary insert-tag" value="<?php echo esc_attr( __( 'Insert Tag', 'contact-form-7' ) ); ?>" />
 	</div>
