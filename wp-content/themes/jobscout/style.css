@@ -4714,7 +4714,7 @@ WIDGET CALL TO ACTION
   font-weight: 700;
   margin: 5px;
   font-size: 0.888em;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   padding: 10px 18px;
 }
 
@@ -8366,3 +8366,22 @@ h2.section-title.index-title {
   padding: 20px 0 20px 20px;
 }
 
+/* banner 2-home */
+.button-wrap .btn-1{
+  background-color: transparent !important;
+  border: 1px solid #fff !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+}
+.raratheme-cta-container .widget-title{
+  font-weight: 500 !important;
+ padding-bottom: 20px;
+}
+
+
+.raratheme-cta-container{
+  max-width: 700px !important;
+}
+.centered.bttk-cta-bg {
+  padding: 60px 0px;
+}
