@@ -258,7 +258,7 @@ class jobscout_Customizer_Notice_Section extends WP_Customize_Section {
 			<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
 
 				<h3 class="accordion-section-title">
-					<span class="section-title" data-plugin_text="{{ data.plugin_text }}">
+					<span class="section-title " data-plugin_text="{{ data.plugin_text }}">
 						<# if( data.recommended_plugins.length > 0 ){ #>
 							{{ data.plugin_text }}
 						<# } #>

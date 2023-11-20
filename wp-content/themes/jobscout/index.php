@@ -19,7 +19,7 @@
  các hành động tại điểm này trong mã của bạn. -->
  
  <?php
- $blog_heading = get_theme_mod( 'blog_section_title', __( 'Latest Articles', 'jobscout' ) );
+ $blog_heading = get_theme_mod( 'blog_section_title', __( 'NEWEST BLOG ENTRIES ', 'jobscout' ) );
  ?>
 
   <div id="primary" class="content-area">
@@ -30,15 +30,13 @@
 	  */
 	  do_action( 'jobscout_before_posts_content' );
 	  ?>
-	<div class="image-container">
-    <img src="../wp-content/themes/jobscout/images/news.jpg" alt=""class="image-style">
-    <div class="text-overlay">FDS NEWS</div>
+	
   	</div>
 	 
 	 <!--nội dung chính của trang web được bao bọc trong phần tử <main>  -->
-	  <main id="main" class="site-main index-main">
+	  <main id="main" class="site-main index-main index_main">
 	  <?php 
-			 if( $blog_heading ) echo '<h2 class="section-title index-title">' . esc_html( $blog_heading ) . '</h2>';
+			 if( $blog_heading ) echo '<h2 class="index_title">' . esc_html( $blog_heading ) . '</h2>';
 		 ?>
 	  <div class="row">
 	  <!--  while để duyệt qua các bài viết -->

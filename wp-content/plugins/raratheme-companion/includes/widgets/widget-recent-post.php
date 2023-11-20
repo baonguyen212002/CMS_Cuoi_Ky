@@ -89,7 +89,7 @@ class RaraTheme_Recent_Post extends WP_Widget {
                             <?php
                             }
                         }?>
-                        <div class="entry-header">
+                        <div class="entry-header" >
                             <?php
                                 $category_detail = get_the_category( get_the_ID() );
                                 echo '<span class="cat-links">';
