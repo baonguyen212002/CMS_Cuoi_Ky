@@ -31,7 +31,7 @@ function wpcf7_text_form_tag_handler( $tag ) {
 	$class = wpcf7_form_controls_class( $tag->type, 'wpcf7-text' );
 
 	if ( in_array( $tag->basetype, array( 'email', 'url', 'tel' ) ) ) {
-		$class .= ' wpcf7-validates-as-' . $tag->basetype;
+		$class .= ' input_submit_email_binh wpcf7-validates-as-' . $tag->basetype;
 	}
 
 	if ( $validation_error ) {
@@ -88,7 +88,7 @@ function wpcf7_text_form_tag_handler( $tag ) {
 	$atts['name'] = $tag->name;
 
 	$html = sprintf(
-		'<span class="wpcf7-form-control-wrap" data-name="%1$s"><input %2$s />%3$s</span>',
+		'<span class="wpcf7-form-control-wrap" data-name="%1$s"><input %2$s placeholder="Input your email address" />%3$s</span>',
 		esc_attr( $tag->name ),
 		wpcf7_format_atts( $atts ),
 		$validation_error
