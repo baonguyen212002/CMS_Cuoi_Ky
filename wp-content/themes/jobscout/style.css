@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-:root {
+ :root {
   --primary-color: #2ace5e;
   --primary-color-rgb: 42, 206, 94;
   --primary-color-dark: #36b25ded;
@@ -4708,8 +4708,8 @@ WIDGET CALL TO ACTION
 
 .widget_raratheme_companion_cta_widget a.btn-cta {
   display: inline-block;
-  background: #2ace5e;
-  border: 1px solid #2ace5e;
+  background: transparent;
+  border: 1px solid #fff;
   color: #fff;
   font-weight: 700;
   margin: 5px;
@@ -4720,7 +4720,7 @@ WIDGET CALL TO ACTION
 
 .widget_raratheme_companion_cta_widget a.btn-cta:hover {
   background: none;
-  color: #2ace5e;
+  color: #fff;
 }
 
 .widget_raratheme_companion_cta_widget .text a.btn-cta {
@@ -8469,6 +8469,67 @@ h2.section-title.index-title {
 .job-desc .job-title-wrap{
   padding-left: 0 !important;
 }
+
+/* Subscribe New Selector */
+.footer_A {
+  background-color: #E67223;
+  height: 200px;
+  padding-top: 0 !important;
+}
+
+.p_search_footer {
+  padding-top: 50px;
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  height: 100px;
+  text-align: left;
+}
+
+.search_submit_footer {
+  position: relative;
+  padding-top: 75px;
+  width: 600px;
+  height: 50px;
+}
+.icon_mail_footer {
+  position: absolute;
+  padding-top: 55px;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  left: 8px;
+  color: #E67223;
+  z-index: 1;
+}
+
+.submit_footer {
+  padding-top: 75px;
+}
+.input_submit_type_binh {
+  width: 200px !important;
+  height: 60px;
+  top: calc(50% - 30px);
+  font-size: 24px !important;
+  border-radius: 0 !important;
+  background: #E67223 !important;
+  border: 2px solid white !important;
+}
+.input_submit_email_binh {
+  height: 60px !important;
+  top: calc(50% - 30px);
+  border-radius: 0 !important;
+  padding-left: 60px !important;
+}
+.client-binh{
+  padding-top : 50px;
+}
+
+/* Moddule 4 */
+.jobs-4 {
+  display: flex;
+  flex-wrap: wrap;
+}
 .raratheme-cta-container{
   max-width: 700px !important;
 }
@@ -8571,6 +8632,11 @@ h2.section-title.index-title {
 .entry-title a {
   text-decoration: none !important;
 }
+
+/*header - new 2 banner*/
+.left-header {
+  padding-right: 10px;
+}
 .section-title .index-title {
   text-align: center;
   margin-bottom: 31px;
@@ -8581,5 +8647,46 @@ h2.section-title.index-title {
     height: 300px !important;
 }
 
+/* new */
+.index_main{
+  max-width: 1500px !important;
+}
+.index_title {
+  font-weight: 700 !important;
+ text-align: center;
+ margin: 30px 0;
+ text-transform: uppercase;
+   }
+   .readmore-new .readmore-link{
+    font-weight: bold;
+   color: orange;
+     text-decoration: none;
+  }
+  h2.section-title .index-title {
+    text-align: center;
+   margin-bottom: 31px;
+   font-weight: 640 !important;
 
+} 
+.blog-format figure.post-thumbnail {
+  padding: 20px 0 20px 20px;
+}
 
+.blog-format {
+  width: 600px !important;
+  height: 350px !important;
+  padding: 20px !important;
+}
+
+.entry-title a {
+  text-decoration: none !important;
+}
+.section-title .index-title {
+  text-align: center;
+  margin-bottom: 31px;
+  font-weight: 640 !important;
+}
+.blog-format .content-wrap{
+  width: 300px !important;
+    height: 300px !important;
+}

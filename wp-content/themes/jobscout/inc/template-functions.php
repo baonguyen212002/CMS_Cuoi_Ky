@@ -159,7 +159,7 @@ if (!function_exists('jobscout_content_start')):
      */
     function jobscout_content_start()
     {
-        echo '<div id="acc-content"><!-- .site-header -->';
+        echo '<div id="acc-content"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- .site-header -->';
         $home_sections = jobscout_get_home_sections();
         if (!(is_front_page() && !is_home() && $home_sections)) { //Make necessary adjust for pg template.
             echo is_404() ? '<div class="error-holder">' : '<div id="content" class="site-content news-content">';
@@ -221,7 +221,7 @@ if (!function_exists('jobscout_content_start')):
                 }
             }
             ?>
-                <div class="container">
+                <!-- <div class="container"> -->
                     <?php
         }
     }
@@ -313,7 +313,6 @@ if (!function_exists('jobscout_entry_header')):
     }
 endif;
 add_action('jobscout_post_entry_content', 'jobscout_entry_header', 10);
-add_action('jobscout_before_page_entry_content', 'jobscout_entry_header', 10);
 add_action('jobscout_before_single_post_entry_content', 'jobscout_entry_header', 10);
 
 if (!function_exists('jobscout_entry_content')):
@@ -582,9 +581,11 @@ if (!function_exists('jobscout_footer_top')):
             $action_page = home_url('/');
         }
 
+
         if ($active_sidebars) { ?>
                 <?php
         }
+
     }
 endif;
 add_action('jobscout_footer', 'jobscout_footer_top', 30);

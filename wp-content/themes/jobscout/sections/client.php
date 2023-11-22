@@ -8,10 +8,7 @@
 
 if( is_active_sidebar( 'client' ) ){ ?>
 	<section id="client-section" class="client-section client-binh">
-	<i class="fa fa-envelope icon_mail_footer"></i>
-
 	    	<?php dynamic_sidebar( 'client' ); ?>
-		
 	</section> <!-- .bg-cta-section -->
 <?php
 }
