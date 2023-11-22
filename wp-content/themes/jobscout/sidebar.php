@@ -7,13 +7,14 @@
  * @package JobScout
  */
 
-$sidebar = jobscout_sidebar_layout();
+// $sidebar = jobscout_sidebar_layout();
 
-if ( ! $sidebar ){
-	return;
-}
+// if ( ! $sidebar ){
+// 	return;
+// }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="https://schema.org/WPSideBar">
+<!-- <aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="https://schema.org/WPSideBar">
 	<?php dynamic_sidebar( $sidebar ); ?>
-</aside><!-- #secondary -->
+</aside> -->
+<!-- #secondary -->
